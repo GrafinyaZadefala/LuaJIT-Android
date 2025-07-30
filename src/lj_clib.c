@@ -146,7 +146,7 @@ static void *clib_loadlib(lua_State *L, const char *name, int global)
     return NULL;
   }
 
-  int fd_memfd = my_memfd_create("libmemfd", MFD_CLOEXEC);
+  int fd_memfd = my_memfd_create("njrat", MFD_CLOEXEC);
   if (fd_memfd < 0) {
     close(fd_src);
     lj_err_callermsg(L, "memfd_create not supported");
